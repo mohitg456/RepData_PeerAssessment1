@@ -1,8 +1,8 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 output: 
-  html_document: 
-    keep_md: true
+ html_document: 
+  keep_md: true
 ---
 
 
@@ -24,7 +24,7 @@ Objectives of the first step are to -
 1. Plot a histogram of steps taken per day 
 2. find the mean and median steps per day
 
-```{r "First Step",  results='hold'}
+```{r "First_Step",  results='hold'}
 # Summarize steps per day
 dailySummary <- tapply(act$steps, act$date, function(x) sum(x, na.rm=TRUE))
 # Plot a base histogram and save calculated x and y coordinates
@@ -47,7 +47,7 @@ sprintf("Median Daily Steps: %.2f", median(dailySummary))
 Objectives of the second step are to -   
 1. Plot average steps per 5-minute interval across all dates in the data 
 2. Find the 5-minute interval with the highest average number of steps 
-```{r "Second Step"}
+```{r "Second_Step"}
 # Summarize steps by interval across all days 
 IntervalMeans <- tapply(act$steps, act$interval, function(x) mean(x, na.rm=TRUE))
 
@@ -106,7 +106,7 @@ act2$steps[is.na(act2$steps)] <- rep(IntervalMeans, times=CountDatesWithNA)
 
 Now reproduce the histogram from step 1 and recalculate the mean and median.
 
-```{r  "Third Step After Imputing NAs", results='hold'}
+```{r  "Third_Step_After_Imputing_NAs", results='hold'}
 # Summarize steps per day
 dailySummary2 <- tapply(act2$steps, act2$date, sum)
 # Plot a base histogram and save calculated x and y coordinates
@@ -131,7 +131,7 @@ sprintf("Median Daily Steps After Imputing NAs: %.2f", median(dailySummary2))
 
 Objective is to see if there are differences in activity patterns between weekdays and weekends.
 
-```{r "Weekday Patterns"}
+```{r "Weekday_Patterns"}
 # add a factored day column for weekend/weekday
 weekendDays <- c('Saturday', 'Sunday')
 act2$day <- ifelse(weekdays(ymd(act2$date), FALSE) %in% weekendDays, "Weekend", "Weekday") 

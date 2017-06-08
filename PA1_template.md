@@ -34,7 +34,7 @@ coords<-hist(dailySummary,
 text(coords$mids, y=coords$counts,labels=coords$counts, pos=3, col="red")
 ```
 
-![](PA1_template_files/figure-html/First Step-1.png)<!-- -->
+![](PA1_template_files/figure-html/First_Step-1.png)<!-- -->
 
 ```r
 # Show mean and median daily steps
@@ -70,7 +70,7 @@ ggplot(df, aes(Interval, Average_Steps)) +
 	theme(axis.text.x=element_text(angle = 45, hjust=1))
 ```
 
-![](PA1_template_files/figure-html/Second Step-1.png)<!-- -->
+![](PA1_template_files/figure-html/Second_Step-1.png)<!-- -->
 
 ```r
 maxInterval <- which.max(df$Average_Steps)
@@ -167,7 +167,7 @@ coords<-hist(dailySummary2,
 text(coords$mids, y=coords$counts,labels=coords$counts, pos=3, col="red")
 ```
 
-![](PA1_template_files/figure-html/Third Step After Imputing NAs-1.png)<!-- -->
+![](PA1_template_files/figure-html/Third_Step_After_Imputing_NAs-1.png)<!-- -->
 
 ```r
 # Show mean and median daily steps
@@ -203,7 +203,7 @@ ggplot(act2, aes(prettyInterval, steps)) +
 	theme(axis.text.x=element_text(angle = 45, hjust=1))
 ```
 
-![](PA1_template_files/figure-html/Weekday Patterns-1.png)<!-- -->
+![](PA1_template_files/figure-html/Weekday_Patterns-1.png)<!-- -->
 
 
 
